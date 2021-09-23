@@ -8,9 +8,6 @@ module.exports = {
   ignorePatterns: [
     "projects/**/*"
   ],
-  plugins: [
-    'import',
-  ],
   overrides: [
     {
       files: [
@@ -24,11 +21,14 @@ module.exports = {
         createDefaultProgram: true
       },
       extends: [
-        "plugin:@angular-eslint/recommended",
         "eslint:recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "plugin:@angular-eslint/template/process-inline-templates",
+        "airbnb-base",
         "airbnb-typescript/base"
       ],
       rules: {
