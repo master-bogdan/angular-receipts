@@ -26,17 +26,25 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
+        <li
+          class="dropdown"
+          appDropdown
+          #refDrop="appDropDown"
+        >
           <a href="#" class="dropdown-toggle nav-link" role="button">
             Manage
           </a>
 
-          <ul class="dropdown-menu">
+          <ul
+            [ngClass]="{'show':refDrop.isOpen}"
+            class="dropdown-menu"
+            style="right: 0"
+          >
             <li>
-              <a href="#">Save Data</a>
+              <a class="dropdown-item" href="#">Save Data</a>
             </li>
             <li>
-              <a href="#">Fetch Data</a>
+              <a class="dropdown-item" href="#">Fetch Data</a>
             </li>
           </ul>
         </li>

@@ -15,7 +15,11 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <div class="btn-group">
+    <div
+      class="btn-group"
+      appDropdown
+      #refDrop="appDropDown"
+    >
       <button
         type="button"
         class="btn btn-primary dropdown-toggle"
@@ -23,15 +27,18 @@
         Manage Recipe
         <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu">
+      <ul
+        [ngClass]="{'show':refDrop.isOpen}"
+        class="dropdown-menu"
+      >
         <li>
-          <a href="#">Add Ingredients to Shopping List</a>
+          <a class="dropdown-item" href="#">Add Ingredients to Shopping List</a>
         </li>
         <li>
-          <a href="#">Add Recipe</a>
+          <a class="dropdown-item" href="#">Add Recipe</a>
         </li>
         <li>
-          <a href="#">Delete Recipe</a>
+          <a class="dropdown-item" href="#">Delete Recipe</a>
         </li>
       </ul>
     </div>
